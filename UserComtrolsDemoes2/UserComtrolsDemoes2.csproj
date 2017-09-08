@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CompositeCalender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CompositeCalender\bin\Debug\CompositeCalender.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -94,6 +98,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CachingExample.aspx" />
+    <Content Include="CachingWebFormUsrControls.aspx" />
+    <Content Include="FragmentCachingDemo.ascx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -116,6 +123,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CachingExample.aspx.cs">
+      <DependentUpon>CachingExample.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CachingExample.aspx.designer.cs">
+      <DependentUpon>CachingExample.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CachingWebFormUsrControls.aspx.cs">
+      <DependentUpon>CachingWebFormUsrControls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CachingWebFormUsrControls.aspx.designer.cs">
+      <DependentUpon>CachingWebFormUsrControls.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CalenderDemo.aspx.cs">
       <DependentUpon>CalenderDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +150,13 @@
     </Compile>
     <Compile Include="CalenderUserControls\FullCalenderUserControl.ascx.designer.cs">
       <DependentUpon>FullCalenderUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="FragmentCachingDemo.ascx.cs">
+      <DependentUpon>FragmentCachingDemo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FragmentCachingDemo.ascx.designer.cs">
+      <DependentUpon>FragmentCachingDemo.ascx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -145,6 +173,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServerControlDemoes2\ServerControlDemoes2.csproj">
+      <Project>{1A6118DB-2DE6-4D09-B5BE-6F81C8AF2FE9}</Project>
+      <Name>ServerControlDemoes2</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
